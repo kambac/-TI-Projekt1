@@ -1,0 +1,11 @@
+body {font-style: italic; text-align:center;}
+table {border: 5px double black; background-color: lightgray; width: 900px;}
+th {text-align: center; font: 30px bold; color:darkgreen; text-decoration: underline }
+td {border: 1px gray solid;}
+#menu {text-align: center; font: 15px bold; width: 200px;}
+canvas {border: 2px blue solid}
+#description {text-align: justify; margin: 10px;}
+#desc_show {padding: 5px 4px; border-radius: 8px; border: 2px solid green;}
+#desc_hide {padding: 5px 4px; border-radius: 8px; border: 2px solid red;}
+#start {padding: 5px 4px; border-radius: 8px; border: 2px solid green;}
+#stop {padding: 5px 4px; border-radius: 8px; border: 2px solid red;}

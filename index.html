@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Projekt1 Kamil Baczyński</title>
+    <link rel="StyleSheet" href="Projekt.css" type="text/css" />
+</head>
+<body onLoad="draw(); change_tilted_balls(); description_hide()">
+    <table id="table">
+        <tr>
+            <th colspan="2">Kołyska Newtona</th>
+        </tr>
+        <tr>
+            <td id="menu">
+                <div id="description_manage">
+                    <input type="button" id="desc_show" value="Pokaż opis doświadczenia" onclick="description_show(); description_manage_hide()" /><br>
+                </div><br>
+                
+                Wybierz ile kulek zawiesić:<br>
+                
+                <select id="choice_number_of_balls" onChange="change_tilted_balls(); draw();">
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select><br><br>
+                
+                Wybierz ile kulek odchylić:<br>
+                <select id="choice_tilted_balls" onChange="draw();">
+                    <option>.</option>
+                </select><br><br>
+                
+                <div id="start_stop">
+                    <input type="button" id="start" value="Rozpocznij animację" onclick="init(); change_on_stop();" /><br>
+                </div>
+            </td>
+            <td>
+                <canvas id="canvas" width="700" height="400"></canvas>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><article id="description">
+                <h1>Opis urządzenia:</h1>
+                <p>Rząd kilku stykających się ze sobą kulek zawieszonych na statywie. Wykonują drgania tylko w jednej płaszczyźnie. Kulki posiadają taką samą wielkość i masę.</p>
+                <h1>Opis działania:</h1>
+                <p>Wychylamy pewną ilość kulek o jakiś kąt, po zderzeniu tyle samo kulek ile wychyliliśmy zostanie odchylona z końca szeregu o taki sam kąt. Kulki które nie wychylą się w ani jedną ani drugą stronę pozostaną w bezruchu.</p>
+                <h1>Wyjaśnienie działania:</h1>
+                <p>Zderzenia kulek są prawie doskonale sprężyste. Przy takim zderzeniu zachowana jest energia kinetyczna zderzających się ciał. Z zasady zachowania energii i zasady zachowania pędu wynika, że dla ciał o takiej samej masie po zderzeniu pierwsze ciało zatrzymuje się, a drugie porusza z taką samą prędkością, jaką miało pierwsze ciało. W ten sposób pęd przekazywany jest kolejnym kulkom, które przekazują go dalej, aż zaczną się poruszać.</p>
+            </article></td>
+        </tr>
+    </table><br>
+        <script src="Projekt.js"></script>
+</body>
+</html>
