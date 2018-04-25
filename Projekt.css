@@ -1,8 +1,12 @@
+* {box-sizing: border-box;}
 body {font-style: italic; text-align:center;}
-table {border: 5px double black; background-color: lightgray; width: 900px;}
-th {text-align: center; font: 30px bold; color:darkgreen; text-decoration: underline }
-td {border: 1px gray solid;}
-#menu {text-align: center; font: 15px bold; width: 200px;}
+#page{border: 5px double black; background-color: lightgray;}
+header{font: 27px bold;}
+.column {float: left; padding: 10px;}
+.left {width: 25%;}
+.right {width: 75%;}
+.row:after {content: ""; display: table; clear: both;}
+#menu {text-align: center; font: 15px bold;}
 canvas {border: 2px blue solid}
 #description {text-align: justify; margin: 10px;}
 #desc_show {padding: 5px 4px; border-radius: 8px; border: 2px solid green;}

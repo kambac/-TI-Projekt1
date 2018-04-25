@@ -65,23 +65,23 @@ function draw() {
     rect(0,0,WIDTH,20);
     //kulki
     ctx.fillStyle = "red";
-    
+
     for (i=0; i<options[indeks].text; i++){
         x_of_balls[i] = (WIDTH/2 - (options[indeks].text-1)*radius + i*(2*radius));
         y_of_balls[i] = height_of_circles;
         x_of_begin[i] = x_of_balls[i];
     }
-    
+
     for(i=0; i<options2[indeks2].text; i++){
         x_of_balls[i] = x_of_balls[i] - R*Math.sin(angle);
         y_of_balls[i] = R*Math.cos(angle) + 20;
     }
-    
+
     for (i=0; i<options[indeks].text; i++){
         line(x_of_balls[i],y_of_balls[i],x_of_begin[i],20);
         circle(x_of_balls[i], y_of_balls[i], radius);
     }
-    
+
     angle_tmp = angle;
     d_angle = 0;
 }
@@ -99,7 +99,7 @@ function draw2() {
     //kulki
     ctx.fillStyle = "red";
 
-    
+
     if(angle_tmp >= 0){
         d_angle += angle_acceleration;
         angle_tmp -= d_angle;
@@ -124,13 +124,13 @@ function draw2() {
             }
         }
     }
-    
-    
+
+
     for (i=0; i<options[indeks].text; i++){
         line(x_of_balls[i],y_of_balls[i],x_of_begin[i],20);
         circle(x_of_balls[i], y_of_balls[i], radius);
     }
-    
+
 }
 //Funkcja ustawiająca interwał, będzie wykonywać funkcję draw2 co podaną ilość ms
 function init() {
@@ -145,11 +145,11 @@ function stop() {
 }
 //Funkcja, która nadpisze zawartość obiektu start_stop przyciskiem słóżącym do zatrzymania animacji
 function change_on_stop(){
-    document.getElementById("start_stop").innerHTML = "<input type=\"button\" id=\"stop\" value=\"Zatrzymaj animację\" onclick=\"stop(); change_on_start();\" />";
+    document.getElementById("start_stop").innerHTML = '<input type="button" id="stop" value="Zatrzymaj animację" onclick="stop(); change_on_start();" />';
 }
 //Funkcja, która nadpisze zawartość obiektu start_stop przyciskiem słóżącym do rozpoczęcia animacji
 function change_on_start(){
-    document.getElementById("start_stop").innerHTML = "<input type=\"button\" id=\"start\" value=\"Rozpocznij animację\" onclick=\"init(); change_on_stop();\" />";
+    document.getElementById("start_stop").innerHTML = '<input type="button" id="start" value="Rozpocznij animację" onclick="init(); change_on_stop();" />';
 }
 //Funkcja dostosowyjąca ilość możliwych odchyleń kulek od ilości zawieszonych kulek
 function change_tilted_balls(){
@@ -161,7 +161,7 @@ function change_tilted_balls(){
         var opt = new Option(i, i);
         options2.add(opt);
     }
-    
+
 }
 //Funkcja wyświetlająca tekst w obiekcie description, gdzie znajduje się opis kołyski newtona.
 function description_show(){
@@ -173,9 +173,9 @@ function description_hide(){
 }
 //Funkcja, która nadpisze zawartość obiektu description_manage przyciskiem słóżącym do wyswietlania zawartości description
 function description_manage_show(){
-    document.getElementById("description_manage").innerHTML = "<input type=\"button\" id=\"desc_show\" value=\"Pokaż opis doświadczenia\" onclick=\"description_show(); description_manage_hide()\" /><br>";
+    document.getElementById("description_manage").innerHTML = '<input type="button" id="desc_show" value="Pokaż opis doświadczenia" onclick="description_show(); description_manage_hide()" /><br>';
 }
 //Funkcja, która nadpisze zawartość obiektu description_manage przyciskiem słóżącym do chowania zawartości description
 function description_manage_hide(){
-    document.getElementById("description_manage").innerHTML = "<input type=\"button\" id=\"desc_hide\" value=\"Schowaj opis doświadczenia\" onclick=\"description_hide(); description_manage_show()\" /><br>";
+    document.getElementById("description_manage").innerHTML = '<input type="button" id="desc_hide" value="Schowaj opis doświadczenia" onclick="description_hide(); description_manage_show()" /><br>';
 }
